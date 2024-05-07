@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Di Chuyển</title>
+</head>
+<body>
+<a href="moveHCN.html">Di Chuyển theo hình chữ nhật</a>
+<img src="sasuke.jpg" id="sasuke" style="position: absolute; left: -150px; top: 100px" width="100px" height="100px">
+
+<script>
+    let s = 3
+    setInterval(()=>{
+        let sasuke = document.getElementById('sasuke')
+        sasuke.style.left = parseInt(sasuke.style.left) + s + "px"
+        if (parseInt(sasuke.style.left) >= window.innerWidth) {
+            sasuke.style.left = -150 + "px"
+        }
+    }, 10)
+
+</script>
+</body>
+</html>

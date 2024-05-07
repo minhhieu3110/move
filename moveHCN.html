@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Di chuyển Hình chữ nhật</title>
+</head>
+<body>
+<img src="naruto.jpg" id="naruto" style="position: absolute; left: 0; top: 0" height="100px" width="100px">
+<script>
+    let hdc = 'right'//Hướng di chuyển ban đầu
+    let s = 3
+    setInterval(()=>{
+        let naruto = document.getElementById('naruto')
+        if(hdc === 'right' && parseInt(naruto.style.left) < window.innerWidth - naruto.width){
+            naruto.style.left = parseInt(naruto.style.left)+ s+"px"
+        }else if(hdc === 'right'){
+            hdc = 'down'
+        }
+        if(hdc === 'down' && parseInt(naruto.style.top) < window.innerHeight - naruto.height){
+            naruto.style.top = parseInt(naruto.style.top)+s+"px"
+        }else if(hdc === 'down'){
+            hdc = 'left'
+        }
+        if(hdc === 'left' && parseInt(naruto.style.left) > 0){
+            naruto.style.left = parseInt(naruto.style.left)-s+"px"
+        }else if( hdc === "left"){
+            hdc = 'up'
+        }
+        if(hdc === 'up' && parseInt(naruto.style.top) > 0){
+            naruto.style.top = parseInt((naruto.style.top)) - s +"px"
+        }else if(hdc === 'up'){
+            hdc = 'right'
+        }
+
+    }, 10)
+</script>
+</body>
+</html>
